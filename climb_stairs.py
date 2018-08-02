@@ -6,7 +6,8 @@
 #  f(0) = 1 and f(1) = 1
 #  f(n) = f(n-1) + f(n-2)
 #
-table = [0] * (5+1)
+num = 5
+table = [0] * (num+1)
 
 def climb(n):
     if n == 0 or n == 1:
@@ -17,5 +18,18 @@ def climb(n):
     table[n] = climb(n-1)+ climb(n-2)
     return table[n]
 
-ans = climb(5)
-print(table)
+ans = climb(num)
+print(table[1:])
+
+#
+### bottom-up
+#
+# [1,1,0,0,0,0]
+table = [1,1] 
+for i in range(0,num-1):
+    table.append(0)
+    
+for i in range(2,num+1):
+    table[i] = table[i-1] + table[i-2]
+print(table[1:])
+
