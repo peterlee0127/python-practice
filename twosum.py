@@ -1,17 +1,15 @@
-num = [1,2,3,6,10,15,16,17]
-ans = 18
-answer = []
-
 
 def twosum(num,ans):
+    print(num)
+    print(ans)
     dict = {}
     for nu in num:
         if nu in dict:
-            answer.append([dict[nu], nu])
+            print(str(dict[nu])+" "+str(nu))
         else:
             dict[ans-nu] = nu
 
 
 
-out = twosum(num,ans)
-print(answer)
+twosum([1,2,3,6,10,15,16,17],18)
+twosum([1,2,3,2,10,15,16,17],17)
